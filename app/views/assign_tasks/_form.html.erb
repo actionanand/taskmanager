@@ -1,0 +1,26 @@
+<%= form_with(model: assign_task, local: true) do |f| %>
+  <% if assign_task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assign_task.errors.count, "error") %> prohibited this assign_task from being saved:</h2>
+
+      <ul>
+      <% assign_task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :task_id %>
+    <%= f.select :task_id, options_for_select(get_tasks), {}, {}%>
+  </div>
+
+  <div class="field">
+    <%= f.label :assignee_id %>
+    <%= f.select :assignee_id, options_for_select(get_users), {}, {}%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Assign this task" %>
+  </div>
+<% end %>

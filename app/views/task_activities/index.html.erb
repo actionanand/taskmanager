@@ -1,0 +1,17 @@
+<div id="view_list">
+  <%= render 'agreements/agreement_views' %>
+</div>
+
+<script>
+  function add1(event) {
+        alert("Are you sure to change?");
+    $.ajax({
+                type: 'GET',
+                url: "/task_activities/change_status",
+                data: {'task_id': event},
+                success: function(data) {
+                }
+            });
+    }
+
+</script>

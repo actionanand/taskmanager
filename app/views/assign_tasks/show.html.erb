@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @assign_task.task.t_name %>
+</p>
+
+<p>
+  <strong>Assignee:</strong>
+  <%= @assign_task.assignee.email %>
+</p>
+
+<p>
+  <strong>Assigner:</strong>
+  <%= @assign_task.assigner.email %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @assign_task.status %>
+</p>
+
+<%= link_to 'Edit', edit_assign_task_path(@assign_task) %> |
+<%= link_to 'Back', assign_tasks_path %>
